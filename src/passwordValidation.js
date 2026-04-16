@@ -35,6 +35,10 @@ else if(!/[A-Z]/.test(password)){
   else if(sortingPassword){
     return "password should not be ascending or descending order"
   }
+//password should have lowerCase
+else if(!/[a-z]/.test(password)){
+    return "the password should have at least lowerCase"
+  }
 
   
   const setOfPassword = new Set([...password]);
