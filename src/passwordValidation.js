@@ -16,6 +16,12 @@ export default function isValidPassword(password) {
   else if(!validPassword){
     return "the inserted character is wrong"
   }
+  // containing letters
+  else if (!/^[A-Za-z]/.test(password)) {
+  return "the password should contain with a letter";
+}
+
+
   
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) return false;
