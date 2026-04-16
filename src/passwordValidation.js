@@ -24,7 +24,11 @@ export default function isValidPassword(password) {
 else if(!/[0-9]/.test(password)){
     return "password should have numbers"
   }
+//password should conatin upperCase
 
+else if(!/[A-Z]/.test(password)){
+    return "the password should have uppercase value" 
+  } 
 
   
   const setOfPassword = new Set([...password]);
