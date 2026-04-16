@@ -6,13 +6,10 @@ export const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
  * @param {string} password
  * @returns {boolean}
  */
-export default function isValidPassword(password = "") {
-  // The following line ensures, that password is always
-  //  a string, like the number 128 -> string "128"
+let password = ""
+export default function isValidPassword(password) {
   if (typeof password !== "string") password = String(password);
-
-  // * * * YOUR CODE GOES IN HERE ... * * *
-  const validPassword = /^[A-Za-z0-9]+$/.test(password)
+   const validPassword = /^[A-Za-z0-9]+$/.test(password)
   if(password.length !== 10){
     return 'the password should be atleast 10 characters'
   }
@@ -20,14 +17,6 @@ export default function isValidPassword(password = "") {
     return "the inserted character is wrong"
   }
   
-  /*
-   * if (password is not exactly 10 digits or characters...) {
-   *   return ...;
-   * }
-   * if (is not composed by digits and numbers) {
-   *   return ...;
-   * }
-   */
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) return false;
   return true;
