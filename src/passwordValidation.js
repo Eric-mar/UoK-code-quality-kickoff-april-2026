@@ -20,6 +20,10 @@ export default function isValidPassword(password) {
   else if (!/^[A-Za-z]/.test(password)) {
   return "the password should contain with a letter";
 }
+// password should contain numbers
+else if(!/[0-9]/.test(password)){
+    return "password should have numbers"
+  }
 
 
   
