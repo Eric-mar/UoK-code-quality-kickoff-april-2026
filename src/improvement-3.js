@@ -5,12 +5,11 @@
  */
 
 // FUNCTION 3
-export default function findLargestNumber(numbers) {
-  let largest = numbers[0];
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > largest) {
-      largest = numbers[i];
-    }
-  }
-  return largest;
+export default function findLargestNumber(values) {
+  
+  // sorting numbers  in descendingOrder
+  let sortingNumber = values.sort((a,b)=>b-a,0)
+  // returning the first element
+  return sortingNumber[0]
+
 }
